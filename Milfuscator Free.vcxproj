@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Dev|Win32">
+      <Configuration>Dev</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Dev|x64">
+      <Configuration>Dev</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{455f979c-0365-497e-8c01-9e1806f45429}</ProjectGuid>
+    <RootNamespace>MilfuscatorFree</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dev|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dev|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Dev|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Dev|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>Dependencies\Zydis\Include\;$(IncludePath)</IncludePath>
+    <OutDir>Build\Release\Bin</OutDir>
+    <IntDir>Build\Release\Cache</IntDir>
+    <GenerateManifest>false</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dev|Win32'">
+    <IncludePath>Dependencies\Zydis\Include\;$(IncludePath)</IncludePath>
+    <OutDir>Build\Dev\Bin</OutDir>
+    <IntDir>Build\Dev\Cache</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;ZYDIS_STATIC_BUILD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalOptions>/MAP %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dev|Win32'">
+    <ClCompile>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;ZYDIS_STATIC_BUILD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalOptions>/MAP %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dev|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Classes\CodeAnalyzer\CodeAnalyzer.cpp" />
+    <ClCompile Include="Classes\Files\Files.cpp" />
+    <ClCompile Include="Classes\Obfuscator\Obfuscator.cpp" />
+    <ClCompile Include="Classes\PE\PE.cpp" />
+    <ClCompile Include="Classes\Rebuilder\Rebuilder.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\arm\a64assembler.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\arm\a64builder.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\arm\a64compiler.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\arm\a64emithelper.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\arm\a64formatter.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\arm\a64func.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\arm\a64instapi.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\arm\a64instdb.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\arm\a64operand.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\arm\a64rapass.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\arm\armformatter.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\core\archtraits.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\core\assembler.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\core\builder.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\core\codeholder.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\core\codewriter.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\core\compiler.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\core\constpool.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\core\cpuinfo.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\core\emithelper.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\core\emitter.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\core\emitterutils.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\core\environment.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\core\errorhandler.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\core\formatter.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\core\func.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\core\funcargscontext.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\core\globals.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\core\inst.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\core\jitallocator.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\core\jitruntime.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\core\logger.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\core\operand.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\core\osutils.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\core\ralocal.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\core\rapass.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\core\rastack.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\core\string.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\core\support.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\core\target.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\core\type.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\core\virtmem.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\core\zone.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\core\zonehash.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\core\zonelist.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\core\zonestack.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\core\zonetree.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\core\zonevector.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\x86\x86assembler.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\x86\x86builder.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\x86\x86compiler.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\x86\x86emithelper.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\x86\x86formatter.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\x86\x86func.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\x86\x86instapi.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\x86\x86instdb.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\x86\x86operand.cpp" />
+    <ClCompile Include="Dependencies\asmjit\asmjit\x86\x86rapass.cpp" />
+    <ClCompile Include="Dependencies\MapParser\MAPFile.cpp" />
+    <ClCompile Include="Milfuscator Free.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Classes\Classes.hpp" />
+    <ClInclude Include="Classes\CodeAnalyzer\CodeAnalyzer.hpp" />
+    <ClInclude Include="Classes\Files\Files.hpp" />
+    <ClInclude Include="Classes\Obfuscator\Obfuscator.hpp" />
+    <ClInclude Include="Classes\PE\PE.hpp" />
+    <ClInclude Include="Classes\Rebuilder\Rebuilder.hpp" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\a64.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\arm.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\arm\a64archtraits_p.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\arm\a64assembler.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\arm\a64builder.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\arm\a64compiler.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\arm\a64emithelper_p.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\arm\a64emitter.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\arm\a64formatter_p.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\arm\a64func_p.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\arm\a64globals.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\arm\a64instapi_p.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\arm\a64instdb.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\arm\a64instdb_p.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\arm\a64operand.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\arm\a64rapass_p.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\arm\a64utils.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\arm\armformatter_p.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\arm\armglobals.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\arm\armoperand.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\asmjit-scope-begin.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\asmjit-scope-end.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\asmjit.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\core.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\core\api-build_p.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\core\api-config.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\core\archcommons.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\core\archtraits.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\core\assembler.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\core\builder.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\core\codebuffer.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\core\codeholder.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\core\codewriter_p.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\core\compiler.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\core\compilerdefs.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\core\constpool.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\core\cpuinfo.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\core\emithelper_p.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\core\emitter.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\core\emitterutils_p.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\core\environment.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\core\errorhandler.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\core\formatter.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\core\formatter_p.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\core\func.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\core\funcargscontext_p.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\core\globals.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\core\inst.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\core\jitallocator.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\core\jitruntime.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\core\logger.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\core\misc_p.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\core\operand.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\core\osutils.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\core\osutils_p.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\core\raassignment_p.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\core\rabuilders_p.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\core\radefs_p.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\core\ralocal_p.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\core\rapass_p.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\core\rastack_p.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\core\string.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\core\support.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\core\target.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\core\type.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\core\virtmem.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\core\zone.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\core\zonehash.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\core\zonelist.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\core\zonestack.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\core\zonestring.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\core\zonetree.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\core\zonevector.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\x86.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\x86\x86archtraits_p.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\x86\x86assembler.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\x86\x86builder.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\x86\x86compiler.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\x86\x86emithelper_p.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\x86\x86emitter.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\x86\x86formatter_p.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\x86\x86func_p.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\x86\x86globals.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\x86\x86instapi_p.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\x86\x86instdb.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\x86\x86instdb_p.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\x86\x86opcode_p.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\x86\x86operand.h" />
+    <ClInclude Include="Dependencies\asmjit\asmjit\x86\x86rapass_p.h" />
+    <ClInclude Include="Dependencies\Header Libs\DynamicNumber.h" />
+    <ClInclude Include="Dependencies\MapParser\DebugTypes.hpp" />
+    <ClInclude Include="Dependencies\MapParser\File.hpp" />
+    <ClInclude Include="Dependencies\MapParser\MAPFile.hpp" />
+    <ClInclude Include="Dependencies\Header Libs\xor.hpp" />
+    <ClInclude Include="Dependencies\Zydis\Include\Zycore\Allocator.h" />
+    <ClInclude Include="Dependencies\Zydis\Include\Zycore\API\Memory.h" />
+    <ClInclude Include="Dependencies\Zydis\Include\Zycore\API\Process.h" />
+    <ClInclude Include="Dependencies\Zydis\Include\Zycore\API\Synchronization.h" />
+    <ClInclude Include="Dependencies\Zydis\Include\Zycore\API\Terminal.h" />
+    <ClInclude Include="Dependencies\Zydis\Include\Zycore\API\Thread.h" />
+    <ClInclude Include="Dependencies\Zydis\Include\Zycore\ArgParse.h" />
+    <ClInclude Include="Dependencies\Zydis\Include\Zycore\Atomic.h" />
+    <ClInclude Include="Dependencies\Zydis\Include\Zycore\Bitset.h" />
+    <ClInclude Include="Dependencies\Zydis\Include\Zycore\Comparison.h" />
+    <ClInclude Include="Dependencies\Zydis\Include\Zycore\Defines.h" />
+    <ClInclude Include="Dependencies\Zydis\Include\Zycore\Format.h" />
+    <ClInclude Include="Dependencies\Zydis\Include\Zycore\Internal\AtomicGNU.h" />
+    <ClInclude Include="Dependencies\Zydis\Include\Zycore\Internal\AtomicMSVC.h" />
+    <ClInclude Include="Dependencies\Zydis\Include\Zycore\LibC.h" />
+    <ClInclude Include="Dependencies\Zydis\Include\Zycore\List.h" />
+    <ClInclude Include="Dependencies\Zydis\Include\Zycore\Object.h" />
+    <ClInclude Include="Dependencies\Zydis\Include\Zycore\Status.h" />
+    <ClInclude Include="Dependencies\Zydis\Include\Zycore\String.h" />
+    <ClInclude Include="Dependencies\Zydis\Include\Zycore\Types.h" />
+    <ClInclude Include="Dependencies\Zydis\Include\Zycore\Vector.h" />
+    <ClInclude Include="Dependencies\Zydis\Include\Zycore\Zycore.h" />
+    <ClInclude Include="Dependencies\Zydis\Include\Zydis\Decoder.h" />
+    <ClInclude Include="Dependencies\Zydis\Include\Zydis\DecoderTypes.h" />
+    <ClInclude Include="Dependencies\Zydis\Include\Zydis\Defines.h" />
+    <ClInclude Include="Dependencies\Zydis\Include\Zydis\Encoder.h" />
+    <ClInclude Include="Dependencies\Zydis\Include\Zydis\Formatter.h" />
+    <ClInclude Include="Dependencies\Zydis\Include\Zydis\FormatterBuffer.h" />
+    <ClInclude Include="Dependencies\Zydis\Include\Zydis\Generated\EnumInstructionCategory.h" />
+    <ClInclude Include="Dependencies\Zydis\Include\Zydis\Generated\EnumISAExt.h" />
+    <ClInclude Include="Dependencies\Zydis\Include\Zydis\Generated\EnumISASet.h" />
+    <ClInclude Include="Dependencies\Zydis\Include\Zydis\Generated\EnumMnemonic.h" />
+    <ClInclude Include="Dependencies\Zydis\Include\Zydis\Generated\EnumRegister.h" />
+    <ClInclude Include="Dependencies\Zydis\Include\Zydis\Internal\DecoderData.h" />
+    <ClInclude Include="Dependencies\Zydis\Include\Zydis\Internal\EncoderData.h" />
+    <ClInclude Include="Dependencies\Zydis\Include\Zydis\Internal\FormatterATT.h" />
+    <ClInclude Include="Dependencies\Zydis\Include\Zydis\Internal\FormatterBase.h" />
+    <ClInclude Include="Dependencies\Zydis\Include\Zydis\Internal\FormatterIntel.h" />
+    <ClInclude Include="Dependencies\Zydis\Include\Zydis\Internal\SharedData.h" />
+    <ClInclude Include="Dependencies\Zydis\Include\Zydis\Internal\String.h" />
+    <ClInclude Include="Dependencies\Zydis\Include\Zydis\MetaInfo.h" />
+    <ClInclude Include="Dependencies\Zydis\Include\Zydis\Mnemonic.h" />
+    <ClInclude Include="Dependencies\Zydis\Include\Zydis\Register.h" />
+    <ClInclude Include="Dependencies\Zydis\Include\Zydis\SharedTypes.h" />
+    <ClInclude Include="Dependencies\Zydis\Include\Zydis\ShortString.h" />
+    <ClInclude Include="Dependencies\Zydis\Include\Zydis\Status.h" />
+    <ClInclude Include="Dependencies\Zydis\Include\Zydis\Utils.h" />
+    <ClInclude Include="Dependencies\Zydis\Include\Zydis\Zydis.h" />
+    <ClInclude Include="Framework.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="Dependencies\asmjit\asmjit.lib" />
+    <Library Include="Dependencies\Zydis\Zycore.lib" />
+    <Library Include="Dependencies\Zydis\Zydis.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Natvis Include="Dependencies\asmjit\asmjit.natvis" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
