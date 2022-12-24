@@ -4,6 +4,8 @@ The 'Free Milfuscator' is now an open-source project, the essence of which is to
 
 The milfuscator completely rebuilds the PE file, modifies and supplements the existing code .text sections thereby expanding it, it does not create any additional sections.
 
+**[12/24/2022] This mutator is very unstable and experimental, not all PE files can be mutated with it. I realized that there is a lot of shit code in it, starting with the project architecture, map files parser, and ending with jump tables fix. Since the release of this mutator, a lot of new ideas have appeared and maybe soon I will rewrite this mutator.**
+
 ## How to use?
 
 The milfuscator does not read the PDB file, instead you must specify the path to .MAP file, then to the executable file itself. To enable generation .MAP file you have to go to the project settings and perform the following steps:
